@@ -73,3 +73,7 @@ def get_icon_string(editor, image):
 
     return image.props.icon_name
 ```
+
+### Pull Request
+
+https://github.com/GNOME/alacarte/pull/9
