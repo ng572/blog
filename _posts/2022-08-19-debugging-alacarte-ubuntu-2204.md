@@ -26,7 +26,7 @@ Native APT-installed of alacarte (aka Main Menu editor) NOT responding when I wa
 
 ### Debugging
 
-add the block of code that would help us see the variables
+add the block of code that would open up the debugger
 
 ```py
     try:
@@ -36,7 +36,7 @@ add the block of code that would help us see the variables
         extype, value, tb = sys.exc_info()
         pdb.post_mortem(tb)
 ```
-
+so it looks like this
 ```py
 def get_icon_string(editor, image):
     try:
