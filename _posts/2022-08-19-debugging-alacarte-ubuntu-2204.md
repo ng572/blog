@@ -51,7 +51,7 @@ def get_icon_string(editor, image):
     return image.props.icon_name
 ```
 
-run the program again we find out `editor.icon_file` is supposed to hold the path of user selected icon, but the attribute will go missing if not selected by user
+run the program again we find out `editor.icon_file` is supposed to hold the path of user selected icon, but the attribute will go missing if no icon is selected by user
 
 ```
 -> raise
