@@ -1,7 +1,6 @@
 ---
 layout: post
 title: debugging alacarte ubuntu-22.04
-subtitle: sometimes you can't create items, just because
 comments: true
 ---
 
