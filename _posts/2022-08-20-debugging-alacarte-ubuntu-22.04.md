@@ -1,10 +1,6 @@
 ---
 layout: post
 title: debugging alacarte ubuntu-22.04
-subtitle: 
-gh-repo: 
-gh-badge: 
-tags: []
 comments: true
 ---
 
