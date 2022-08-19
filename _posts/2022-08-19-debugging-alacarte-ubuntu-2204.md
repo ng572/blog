@@ -25,7 +25,7 @@ Native APT-installed alacarte (aka Main Menu editor) NOT responding when I was a
 
 ### Debugging
 
-add the block of code that would open up the debugger
+add the block of code that would open up the debugger to `/usr/share/alacarte/Alacarte/ItemEditor.py`
 
 ```py
     try:
