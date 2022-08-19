@@ -6,7 +6,7 @@ comments: true
 
 ### Symptom
 
-Native APT-installed of alacarte (aka Main Menu editor) NOT responding when I was adding a new item
+Native APT-installed alacarte (aka Main Menu editor) NOT responding when I was adding a new item
 
 ### Log
 
