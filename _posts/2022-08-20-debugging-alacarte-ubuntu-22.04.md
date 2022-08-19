@@ -4,7 +4,18 @@ Native APT-installed of alacarte (aka Main Menu editor) NOT responding when I wa
 
 ### Log
 
-$ alacarte
+    $ alacarte
+    ...
+    Traceback (most recent call last):
+      File "/usr/share/alacarte/Alacarte/ItemEditor.py", line 186, in on_response
+        self.save()
+      File "/usr/share/alacarte/Alacarte/ItemEditor.py", line 176, in save
+        util.fillKeyFile(self.keyfile, self.get_keyfile_edits())
+      File "/usr/share/alacarte/Alacarte/ItemEditor.py", line 234, in get_keyfile_edits
+        Icon=get_icon_string(self, self.builder.get_object('icon-image')),
+      File "/usr/share/alacarte/Alacarte/ItemEditor.py", line 58, in get_icon_string
+        filename = editor.icon_file
+    AttributeError: 'LauncherEditor' object has no attribute 'icon_file'
 
 ### Debugging
 
@@ -47,7 +58,7 @@ run the program again we find out `editor.icon_file` is supposed to hold the pat
 *** AttributeError: 'LauncherEditor' object has no attribute 'icon_file'
 ```
 
-### final fix
+### Final fix
 
 ```py
 def get_icon_string(editor, image):
