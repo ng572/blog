@@ -1,4 +1,4 @@
-I have done some visualization and analysis on the TidyTuesday's dataset `Horror Movies and Profit`, let's see what we can learn from it.
+I have done some visualization and analysis on the TidyTuesday's [dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-23) `Horror Movies and Profit`, let's see what we can learn from it.
 
 ### The history of Movie Profits
 
