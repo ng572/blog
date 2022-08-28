@@ -12,7 +12,7 @@ As more and more films got into the market, the average return dropped. This cou
 
 It should be noted that during the 1950-70s, the markup went up despite more number of films being produced. This could either be an improvement in revenue / cost or both. 
 
-![image](https://user-images.githubusercontent.com/12572058/187070204-1d000672-f2f4-4cab-9d14-0a4a30a23bb7.png)
+![image](https://user-images.githubusercontent.com/12572058/187072185-9fc5fefc-4556-41f4-86be-f170bd230bd1.png)
 
 From the plot we see a significant adoption of films during 1950-70s This could possibly be due to the introduction of an international audience, and America having temporory monopoly of film production.
 
