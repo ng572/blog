@@ -47,6 +47,14 @@ In fact, the number of horror as percentage of all films produced declined since
 
 The decrease and increase of horror films could be understood through the change in cost and revenue. There was apparent traction gained mid-1990s.
 
+![image](https://user-images.githubusercontent.com/12572058/187088910-d7825fd8-bd85-480e-a440-bdbc994bb062.png)
+
+Higher production budget is associated with higher profit, but small-to-medium budget films can also gross very high.
+
+Horror movies seldom incur huge loss, even the worse performing films can earn back most of the budget. This supports the notion that horror productions are a great investment.
+
+The highest grossing movie was (Stephen King's) "It" at 662 million dollars, but only spent 35 million in budget.
+
 ### Financial View of the Matter
 
 As a matter of nature, the higher the risk, the higher the reward. This is understood in finance through the Capital Asset Pricing Model. Let's see this in action.
