@@ -49,7 +49,7 @@ As a matter of nature, the higher the risk, the higher the reward. This is under
 
 As we can see, the lower the production budget, the more unstable the return becomes. However, the expected reward also goes up.
 
-We see that the line is slightly concave because there is a diminishing marginal return to risk. This means that production companies are taking a loss as they tread into unknown water.
+We see that the line is slightly concave because there is a diminishing marginal return to risk. This means that production companies are less rewarded as they try out new things or when the budget is too low.
 
 ![image](https://user-images.githubusercontent.com/12572058/187072303-f2585877-81e2-4548-82fc-060a71c09b81.png)
 
