@@ -1,0 +1,374 @@
+---
+title: "TidyTuesday - Analyzing Movie Profits"
+output:
+  pdf_document: default
+  html_document: default
+date: "2022-08-12"
+---
+```{r setup, include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(fig.width = 6, fig.asp = 0.618, message=FALSE, warning=FALSE)
+```
+
+## Horror Movies and Profit
+
+https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-23
+
+Horror seems to be a great category for movies in terms of profit, a phenomenon described by FiveThirtyEight. Horror movies usually turn out to be great investments, let's see how this is happening with data.
+
+## Data Source: TidyTuesday
+
+A weekly social data project in R, borne out of the R4DS Online Learning Community and the R for Data Science textbook, an emphasis was placed on understanding how to summarize and arrange data to make meaningful charts with ggplot2, tidyr, dplyr, and other tools in the tidyverse ecosystem.
+
+## Custom Magic
+
+An utility to help me pretty print graphs.
+
+```{r}
+`&.gg` <- function(e1, e2) e2(e1)
+# see https://stackoverflow.com/a/53599958/19042045
+pprint <- function(p) {
+    # pass by value somehow...
+    p$labels$x <- p$labels$x %>% gsub("_", " ", .) %>% str_to_title()
+    p$labels$y <- p$labels$y %>% gsub("_", " ", .) %>% str_to_title()
+    p$labels$colour <- p$labels$colour %>% gsub("_", " ", .) %>% str_to_title()
+    return(p)
+}
+
+```
+
+## Cleansing & Preprocessing
+
+```{r}
+# horror_movies %>% 
+#  View()
+
+movie_profit <- readr::read_csv("https://github.com/rfordatascience/tidytuesday/raw/master/data/2018/2018-10-23/movie_profit.csv")
+
+library(lubridate)
+movie_profit <- movie_profit %>% 
+  mutate(release_date = mdy(release_date))
+
+movie_profit <- movie_profit %>% 
+  mutate(profit = worldwide_gross - production_budget,
+         markup = profit / production_budget)
+
+movie_profit <- movie_profit %>% 
+  rename(idx = ...1)
+
+movie_profit %>% 
+  colnames()
+```
+
+## Quality Control
+
+```{r}
+library(scales)
+
+movie_profit %>% 
+  mutate(year=release_date %>% year) %>% 
+  group_by(genre) %>% 
+  summarise(min(year), max(year))
+```
+
+The data is slightly imbalanced because the Horror category only appeared after 1973, while Comedy dated back as far as 1936.
+\newline
+
+```{r}
+# automatic vjsut for count
+auto_vjust <- function(data) {
+  vjust <- sign(diff(data));
+  vjust <- c(vjust, -1*tail(vjust, 1));
+  vjust <- ifelse(vjust == 1, 2, -1);
+  return(vjust)
+}
+
+movie_profit %>% 
+  mutate(year=release_date %>% year) %>% 
+  mutate(decade = year%/%10*10) %>% 
+  group_by(decade) %>% 
+  summarise(mean_markup=mean(markup), count=n()) %>% 
+  ggplot(aes(decade, mean_markup)) +
+  geom_point(aes(size=count)) + 
+  geom_line() +
+  geom_text(aes(label = count, vjust=auto_vjust(mean_markup))) +
+  scale_y_continuous(expand = expansion(mult = c(0.15, 0.15))) +
+  scale_x_discrete(limits=seq(1930, 2010, 10), expand = expansion(mult = c(0.1, 0.1))) +
+  ggtitle("Production Markup throughout the decades") & pprint
+```
+
+```{r}
+movie_profit %>% 
+  mutate(year=release_date %>% year) %>% 
+  mutate(decade = year%/%10*10) %>% 
+  group_by(decade) %>% 
+  summarise(avg_cost=mean(production_budget), avg_gross=mean(worldwide_gross)) %>% 
+  gather(avg_cost, avg_gross, key = "type", value = "dollar") %>% 
+  ggplot(aes(decade, dollar)) +
+  geom_point(aes(color=type)) +
+  geom_line(aes(color=type)) +
+  scale_x_discrete(limits=seq(1930, 2010, 10), expand = expansion(mult = c(0.1, 0.1))) +
+  ggtitle("Revenue vs Cost throughout the decades") & pprint
+```
+
+```{r}
+movie_profit %>% 
+  mutate(year=release_date %>% year) %>% 
+  mutate(decade = year%/%10*10) %>% 
+  group_by(decade) %>% 
+  summarise(total_domestic=sum(domestic_gross), total_worldwide=sum(worldwide_gross)) %>% 
+  ggplot(aes(decade, 1-total_domestic/total_worldwide)) +
+  geom_point() +
+  ylim(0.0, 1.0) +
+  scale_x_discrete(limits=seq(1930, 2010, 10), expand = expansion(mult = c(0.1, 0.1))) +
+  ylab("Share of Box Office Oversea") +
+  ggtitle("Share of Box Office Oversea throughout the decades") & pprint
+```
+
+As a measure to avoid outliers and irrelevant observations, we will only include movies dated after 1980.
+\newline
+
+```{r}
+movie_profit <- movie_profit %>% 
+  filter(year(release_date) >= 1980)
+```
+
+## Overview
+
+```{r}
+
+# movie_profit %>% View()
+
+movie_profit %>% 
+  ggplot(aes(genre, profit)) +
+  geom_boxplot() +
+  scale_y_log10(label = comma) +
+  ggtitle("Distribution of Profits per Genre (log10)") & pprint
+```
+
+When considering only profitable films, all categories amounts to similar amount of profits.
+\newline
+
+```{r}
+movie_profit %>% 
+  ggplot(aes(genre, markup)) +
+  geom_boxplot() + 
+  coord_cartesian(ylim = c(-1,10)) +
+  geom_hline(aes(yintercept = 1.0, linetype = "breakeven"), color = "red") +
+  scale_linetype_manual(name = "Legend", values = "dashed", 
+                      guide = guide_legend(override.aes = list(color = c("red")))) +
+  ggtitle("Distribution of Markup per Genre") & pprint
+
+movie_profit %>% 
+  group_by(genre) %>% 
+  summarise(median(markup), mean(markup))
+```
+
+As confirmed with visualization, the horror category is the most profitable, with a median markup of 1.62 (62% return on budget), and a whopping 10x average return. This is probably due to some outliers on the extreme.
+
+```{r}
+movie_profit %>% 
+  ggplot(aes(release_date, fill = genre)) +
+  geom_histogram(color = "black") +
+  ggtitle("Share of Horror films throughout the years") & pprint
+
+movie_profit %>% 
+  mutate(year=release_date %>% year) %>% 
+  group_by(year, genre) %>% 
+  summarise(count=n()) %>% 
+  mutate(share=count/sum(count)) %>%
+  filter(genre=="Horror") %>% 
+  ggplot(aes(year, share)) +
+  geom_point() +
+  geom_line() +
+  ggtitle("Share of Horror films throughout the years") & pprint
+```
+
+The horror category is the least popular genre in the dataset, so seemingly production companies are not capitalizing as much off horrors. 
+We have fewer observations but nevertheless, we got ~300 data points.
+
+\newpage
+
+```{r}
+horror_movies <- movie_profit %>% 
+  filter(genre == "Horror") %>% 
+  select(-genre)
+```
+
+## Analysis
+
+```{r}
+dollar_format <- unit_format(unit="M", scale = 1e-6)
+
+horror_movies %>% 
+  ggplot(aes(production_budget)) +
+  geom_histogram(position = "dodge") +
+  scale_x_log10(labels = dollar_format) +
+  ggtitle("Distribution of Production Budget in Horror (log10)") & pprint
+```
+
+The production budget resembles the log-normal distribution to a certain degree.
+
+\newpage
+
+```{r}
+horror_movies %>% 
+  gather(production_budget, worldwide_gross, key = "#type", value = "#dollar_amount") %>% 
+  ggplot(aes(`#dollar_amount`, fill = `#type`)) +
+  geom_histogram(position = "dodge") +
+  scale_x_log10(labels = dollar_format) +
+  ggtitle("Distributions of Budget vs Boxoffice (log10)") & pprint
+```
+
+```{r}
+horror_movies %>% 
+  mutate(year=release_date %>% year) %>% 
+  group_by(year) %>% 
+  summarise(avg_cost=mean(production_budget), avg_gross=mean(worldwide_gross)) %>% 
+  gather(avg_cost, avg_gross, key = "type", value = "dollar") %>% 
+  ggplot(aes(year, dollar)) +
+  geom_point(aes(color=type)) +
+  geom_line(aes(color=type)) +
+  scale_x_discrete(limits=seq(1930, 2020, 10), expand = expansion(mult = c(0.1, 0.1))) +
+  ggtitle("Revenue vs Cost since 1980, Horror Only") & pprint
+```
+
+Comparing production budget and worldwide gross amount, we see that the revenues are usually higher than the costs.
+\newpage
+
+```{r}
+horror_movies %>% 
+  ggplot(aes(worldwide_gross, domestic_gross)) +
+  geom_point() +
+  scale_x_continuous(labels = dollar_format) +
+  scale_y_continuous(labels = dollar_format) +
+  geom_abline(intercept = 0, slope = 1) +
+  annotate(
+    "text",
+    x = 250e6,
+    y = 300e6,
+    label = "y = x"
+  ) + ggtitle("Domestic Boxoffice vs Worldwide") & pprint
+```
+
+As a sanity check, worldwide gross is always greater than domestic gross.
+
+### Profitability and Size Effect
+
+In all likelihood, the bigger the budget, the more stable the profitability should be.
+
+Let's evaluate this hypothesis with visualization.
+
+```{r}
+horror_movies %>% 
+  ggplot(aes(production_budget, markup)) +
+  geom_point() +
+  scale_x_continuous(labels = dollar_format) +
+  scale_y_log10(labels = comma) +
+  geom_smooth(se = FALSE) +
+  ggtitle("Horror films Markup vs. Production Budget") & pprint
+```
+
+Small budget horror films have a high expected markup, but are also less stable in terms of profitability.
+
+Seemingly, more production factors (labor, capital) aggregates to a more stable outcome under law of large number.
+
+```{r}
+movie_profit %>% 
+  mutate(rank=percent_rank(production_budget),
+         tier=rank%/%0.05*0.05) %>% 
+  group_by(tier) %>% 
+  summarise(expected_return=mean(markup)-1, standard_deviation=sd(markup), mean_production_budget=mean(production_budget)) %>% 
+  ggplot(aes(standard_deviation, expected_return)) +
+  geom_point(aes(size=mean_production_budget)) +
+  scale_x_log10(labels = scales::percent) +
+  scale_y_log10(labels = scales::percent) +
+  geom_path(alpha=0.1) +
+  ggtitle("CAPM View: E(Return) vs. SD(Return) All Genres") & pprint
+```
+
+```{r}
+horror_movies %>% 
+  mutate(rank=percent_rank(production_budget),
+         tier=rank%/%0.05*0.05) %>% 
+  group_by(tier) %>% 
+  summarise(expected_return=mean(markup)-1, standard_deviation=sd(markup), mean_production_budget=mean(production_budget)) %>% 
+  ggplot(aes(standard_deviation, expected_return)) +
+  geom_point(aes(size=mean_production_budget)) +
+  scale_x_log10(labels = scales::percent) +
+  scale_y_log10(labels = scales::percent) +
+  geom_path(alpha=0.1) +
+  ggtitle("CAPM View: E(Return) vs. SD(Return) Horror Only") & pprint
+```
+
+In another representation, we can use the CAPM dimensions to visualize the relationship between risk and return.
+
+```{r}
+horror_movies %>% 
+  summarise(median_budget = median(production_budget),
+            mean_markup_below_median = mean(markup[production_budget<=median(production_budget)]),
+            mean_markup_above_median = mean(markup[production_budget>median(production_budget)])) %>% 
+  print.data.frame()
+```
+```{r}
+horror_movies %>% 
+  mutate(profitable = profit > 0) %>% 
+  ggplot(aes(production_budget, profit)) +
+  geom_point(aes(color = profitable)) +
+  geom_smooth(se=FALSE, size=0.5, linetype="dashed", color="black") +
+  scale_x_continuous(labels = dollar_format) +
+  scale_y_continuous(labels = dollar_format) +
+  theme(legend.position = "bottom") +
+  scale_colour_manual(
+    values = c("FALSE" = "red", "TRUE" = "darkgreen")
+  ) + ggtitle("Horror films Profit vs. Production Budget") & pprint
+
+sel <- horror_movies %>% 
+  mutate(rank_budget = percent_rank(production_budget)) %>% 
+  filter(profit == max(profit)) %>% 
+  select(movie, profit, production_budget, rank_budget)
+
+# raw
+sel %>% print()
+# adding big marks
+# sel %>% formatC(format="d", big.mark=",") %>% print()
+```
+
+Higher production budget is associated with higher profit, but small-to-medium budget films can also gross very high.
+
+Horror movies seldom incur huge loss, even the worse performing films can earn back most of the budget. This supports the notion that horror productions are a great investment.
+
+The highest grossing movie was "It" at 662 million dollars, but only spent 35 million in budget.
+
+```{r}
+horror_movies %>% 
+  ggplot(aes(release_date, profit)) +
+  geom_point() +
+  geom_smooth() +
+  scale_y_continuous(labels = dollar_format) +
+  ggtitle("Horror films Profit throughout the years") & pprint
+
+horror_movies %>% 
+  ggplot(aes(release_date, fill = mpaa_rating)) +
+  geom_histogram(color = "black") +
+  ggtitle("Parental Guide Ratings throughout the years") & pprint
+
+horror_movies %>% 
+  filter(mpaa_rating %in% c("PG-13", "R")) %>% 
+  ggplot(aes(release_date, profit, color=mpaa_rating, fill=mpaa_rating)) +
+  guides(fill="none") + 
+  geom_point(size=2, alpha=0.4) +
+  geom_smooth(se=FALSE, color="black", size = 2, span=0.5) +
+  geom_smooth(se=FALSE, span=0.5) +
+  theme_dark() +
+  ggtitle("Profit's Trend among PG Ratings") +
+  facet_wrap(~mpaa_rating) +
+  theme(panel.spacing = unit(1.5, "lines")) & pprint
+```
+
+As can be seen clearly, the trend of producing more R-rated horror movies started around mid 1990s.
+
+We are seeing more and more outliers in terms of profit, and a very mild trend of improving profits.
+
+We don't see a clear difference in profit between `R` and `PG-13` films, except occasional outperformance of `PG-13`s.
+
