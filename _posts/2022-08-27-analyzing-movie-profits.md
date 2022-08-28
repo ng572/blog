@@ -10,12 +10,15 @@ There appears to have been a massive earning opportunity at the beginning, where
 
 As more and more films got into the market, the average return dropped. This could be hypothesized as a higher number of firms in the market created a more competitive market outcome
 
-It should be noted that during the 1950-70, the markup went up despite more number of films being produced. This could possibly be due to the introduction of an international audience, and America having temporory monopoly of film production. Or there could be a significant improvement in production efficiency and/or technology. 
+It should be noted that during the 1950-70s, the markup went up despite more number of films being produced. This could either be an improvement in revenue / cost or both. 
 
-![image](https://user-images.githubusercontent.com/12572058/187069267-8987b12f-0a31-40b1-88fa-f2996ac7d00b.png)
+![image](https://user-images.githubusercontent.com/12572058/187070204-1d000672-f2f4-4cab-9d14-0a4a30a23bb7.png)
 
-However, looking at the share of domestic box office, we notice that international box office did not gain prominence during the 1950-70.
+From the plot we see a significant adoption of films during 1950-70s This could possibly be due to the introduction of an international audience, and America having temporory monopoly of film production.
 
-Therefore, it is more likely that production efficiency has gone up during this period.
+![image](https://user-images.githubusercontent.com/12572058/187070612-743bb611-5d06-4d47-b9b7-958bca71baaa.png)
 
-### 
+However, looking at the share of domestic box office, we notice that international box office did not take off during the 1950-70s.
+
+### Horror Movies
+
