@@ -41,6 +41,10 @@ However, there doesn't seem to be as many horror films out there as other genres
 
 In fact, the number of horror as percentage of all films produced declined since 1980, with a mild reversal since mid-1990s.
 
+![image](https://user-images.githubusercontent.com/12572058/187073022-be8c6064-2b57-4a3f-b4c0-108da084d4ea.png)
+
+The decrease and increase of horror films could be understood through the change in cost and revenue. There is apparent traction gained mid-1990s.
+
 ### Financial View of the Matter
 
 As a matter of nature, the higher the risk, the higher the reward. This is understood in finance through the Capital Asset Pricing Model. Let's see this in action.
