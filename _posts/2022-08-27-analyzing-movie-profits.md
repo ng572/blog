@@ -41,4 +41,22 @@ However, there doesn't seem to be as many horror films out there as other genres
 
 In fact, the number of horror as percentage of all films produced declined since 1980, with a mild reversal since mid-1990s.
 
+### Financial View of the Matter
 
+As a matter of nature, the higher the risk, the higher the reward. This is understood in finance through the Capital Asset Pricing Model. Let's see this in action.
+
+![image](https://user-images.githubusercontent.com/12572058/187072295-e894735f-8547-4f0e-84bd-c87cc45ff0c0.png)
+
+As we can see, the lower the production budget, the more unstable the return becomes. However, the expected reward also goes up.
+
+We see that the line is slightly concave because there is a diminishing marginal return to risk. This means that production companies are taking a loss as they tread into unknown water.
+
+![image](https://user-images.githubusercontent.com/12572058/187072303-f2585877-81e2-4548-82fc-060a71c09b81.png)
+
+For the horror category, a similar hierarchy exists but we don't see a curvature. This means that small horror productions are just making as good a living as bigger productions, because they are not punished by being 'small'.
+
+### Conclusion
+
+Not only are Horror films more profitable in general, they are relatively short in supply.
+
+Given all this ample opportunity in the horror genre, it is a mystery why there isn't more horror films out there.
