@@ -40,7 +40,9 @@ layout: base
         </div>
       {% endif %}
 
-      {% include toc.html html=content class="sticky" %}
+      <aside class="sticky">
+      {% include toc.html html=content %}
+      </aside>
       
       <article role="main" class="blog-post">
         {{ content }}
