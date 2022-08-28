@@ -1,6 +1,6 @@
 I have done some visualization and analysis on the TidyTuesday's [dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-23) `Horror Movies and Profit`, let's see what we can learn from it.
 
-[Source code found here](../assets/files/horror_movies.pdf).
+[Source code could be found here](../assets/files/horror_movies.pdf).
 
 ### The history of Movie Profits
 
@@ -20,16 +20,16 @@ From the plot we see a significant adoption of films during 1950-70s This could 
 
 ![image](https://user-images.githubusercontent.com/12572058/187070612-743bb611-5d06-4d47-b9b7-958bca71baaa.png)
 
-However, looking at the share of domestic box office, we notice that international box office did not take off during the 1950-70s. The data point at 1950s should be missing, as I cannot find any mention of an oversea ban on movies.
+However, looking at the share of domestic box office, we notice that international box office did not take off during the 1950-70s. The data point at 1950s was missing, as I cannot find any mention of an oversea ban on movies.
 
 ### Horror Movies
 
 There is a description by FiveThirtyEight that Horror seems to be a very profitable category.
-Horror movies usually turn out to be great investments, let’s see how this is happening with data.
+Horror movies usually turn out to be great investments. Let’s see how this is happening with data.
 
 ![image](https://user-images.githubusercontent.com/12572058/187070735-dddd25ce-108a-4c48-8ff8-d72f1bf73858.png)
 
-At first glace, horror movies does not appear to be winning more seats than other categories, so probably it has got a better production efficieny.
+At the first glace, horror movies do not appear to be winning more seats than other categories, so probably they have got a better production efficieny.
 
 ![image](https://user-images.githubusercontent.com/12572058/187071637-4bc06175-1ad0-4b80-9e84-10ec1f267b4d.png)
 
@@ -45,7 +45,7 @@ In fact, the number of horror as percentage of all films produced declined since
 
 ![image](https://user-images.githubusercontent.com/12572058/187073022-be8c6064-2b57-4a3f-b4c0-108da084d4ea.png)
 
-The decrease and increase of horror films could be understood through the change in cost and revenue. There is apparent traction gained mid-1990s.
+The decrease and increase of horror films could be understood through the change in cost and revenue. There was apparent traction gained mid-1990s.
 
 ### Financial View of the Matter
 
@@ -55,11 +55,11 @@ As a matter of nature, the higher the risk, the higher the reward. This is under
 
 As we can see, the lower the production budget, the more unstable the return becomes. However, the expected reward also goes up.
 
-We see that the line is slightly concave because there is a diminishing marginal return to risk, this is well understood in the financial literature. This means that production companies are less rewarded as they try out new things or when the budget is too low.
+We see that the line is slightly concave because there is a diminishing marginal return to risk, which is well understood in the financial literature, implying that production companies are less rewarded as they try out new things or when the budget is too low.
 
 ![image](https://user-images.githubusercontent.com/12572058/187072303-f2585877-81e2-4548-82fc-060a71c09b81.png)
 
-For the horror category, a similar hierarchy exists but we don't see a curvature. This means that small horror productions are just making as good a living as bigger productions, because they are not punished by being 'small'.
+For the horror category, a similar hierarchy exists but we don't see a curvature. This means that small horror productions are just making as good a living as bigger productions, because they are not punished for being 'small'.
 
 ### Conclusion
 
