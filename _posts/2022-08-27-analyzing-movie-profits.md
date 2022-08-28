@@ -18,7 +18,27 @@ From the plot we see a significant adoption of films during 1950-70s This could 
 
 ![image](https://user-images.githubusercontent.com/12572058/187070612-743bb611-5d06-4d47-b9b7-958bca71baaa.png)
 
-However, looking at the share of domestic box office, we notice that international box office did not take off during the 1950-70s.
+However, looking at the share of domestic box office, we notice that international box office did not take off during the 1950-70s. The data point at 1950s should be missing, as I cannot find any mention of an oversea ban on movies.
 
 ### Horror Movies
+
+There is a description by FiveThirtyEight that Horror seems to be a very profitable category.
+Horror movies usually turn out to be great investments, let’s see how this is happening with data.
+
+![image](https://user-images.githubusercontent.com/12572058/187070735-dddd25ce-108a-4c48-8ff8-d72f1bf73858.png)
+
+At first glace, horror movies does not appear to be winning more seats than other categories, so probably it has got a better production efficieny.
+
+![image](https://user-images.githubusercontent.com/12572058/187071637-4bc06175-1ad0-4b80-9e84-10ec1f267b4d.png)
+
+The Horror category by far has the highest return on investment.
+
+![image](https://user-images.githubusercontent.com/12572058/187071592-f5f7edf0-1a13-429a-8b90-e615a0eb6bcc.png)
+
+However, there doesn't seem to be as many horror films out there as other genres.
+
+![image](https://user-images.githubusercontent.com/12572058/187071596-edc9214e-e3b8-4ff6-bbde-53debbc860d4.png)
+
+In fact, the number of horror as percentage of all films produced declined since 1980, with a mild reversal since mid-1990s.
+
 
