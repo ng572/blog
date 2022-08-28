@@ -1,6 +1,6 @@
 I have done some visualization and analysis on the TidyTuesday's [dataset](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-10-23) `Horror Movies and Profit`, let's see what we can learn from it.
 
-[Source code found here](/assets/files/horror_movies.pdf).
+[Source code found here]({{ ng572.github.io }}{% link /assets/files/horror_movies.pdf %}).
 
 ### The history of Movie Profits
 
