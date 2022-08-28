@@ -2,6 +2,8 @@ I have done some visualization and analysis on the TidyTuesday's [dataset](https
 
 [Source code could be found here](../assets/files/horror_movies.pdf).
 
+{% include pdfembed.html filename="horror_movies.pdf" %}
+
 ### The history of Movie Profits
 
 First, let's take a look at the return on investment (markup = revenue / cost) of movies thorughout the decades.
