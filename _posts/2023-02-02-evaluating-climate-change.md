@@ -34,7 +34,7 @@ Surprisingly, we didn't find much systematic trends on drought and heavy rainfal
 
 > Since 1993, however, average sea level has risen at a rate of 0.12 to 0.14 (about 3.302 milimeters) inches per year
 
-Our result is much higher than what is mentioned by [United States Environmental Protection Agency](https://www.epa.gov/climate-indicators/climate-change-indicators-sea-level). This would eventually come down to the solidarity of data, the choice of data, and timeframe of analysis.
+Our result is much higher than what is mentioned by [United States Environmental Protection Agency](https://www.epa.gov/climate-indicators/climate-change-indicators-sea-level). This difference would eventually come down to the solidarity of data, the choice of data, and timeframe of analysis.
 
 I do, however, believe in my own analysis and this could be an indication of how variable different research's sea level analysis could be.
 
