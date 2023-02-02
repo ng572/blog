@@ -12,7 +12,7 @@ Predicting sea level is important because it helps us understand and prepare for
 
 ### Model Reasoning
 
-For time series like climate data, it is highly unlikely we can use simple models such as regression
+For time series like climate data, it is highly unlikely we can use simple models such as linear regression
 
 But we also would not want to rely on complex models such as neural networks
 
