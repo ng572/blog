@@ -22,7 +22,7 @@ The official method of normalization is described but formula is not given
 
 There maybe a 10% inconsistency from the `(X-E)/S` formula but this is negligible
 
-For example, Sea level has an average of `-7024.94` and SD of `39.0834`
+For example, Sea level has an average of `-7024.94` and standard deviation of `39.0834`
 
 ![image](https://user-images.githubusercontent.com/12572058/216469063-04a48143-978f-49e1-84b6-fa9272c0371c.png)
 
