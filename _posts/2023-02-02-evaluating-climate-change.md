@@ -4,7 +4,7 @@ For complete details and codes, see the display-friendly pdf below
 
 There has been ongoing data collected concerning climate change, we are here to evaluate the seriousness and velocity of those changes.
 
-Data related to drought, heavy rain, sea level, temperatures, and high wind has been analysed and predictions were given.
+Data related to drought, heavy rain, sea level, temperatures, and high wind has been analysed and predictions were given for the near future.
 
 Predicting sea level is important because it helps us understand and prepare for the impacts of climate change on coastal communities and infrastructure. Rising sea levels can cause coastal flooding, erosion, saltwater intrusion into freshwater aquifers, and other environmental and economic consequences. Accurate sea level predictions allow governments, businesses, and communities to plan and adapt to these impacts, reducing the risk of harm to people and property.
 
