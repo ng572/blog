@@ -20,7 +20,7 @@ We want to enable a level of interpretation that is helpful to draw a conclusion
 
 The official method of normalization is described but formula is not given
 
-There maybe a 10% inconsistency from the $\frac{(X-E)}{S}$ formula but this is negligible
+There maybe a 10% inconsistency from the `(X-E)/S` formula but this is negligible
 
 For example, Sea level has an average of `-7024.94` and SD of `39.0834`
 
