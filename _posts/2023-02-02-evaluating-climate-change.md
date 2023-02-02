@@ -1,3 +1,5 @@
+![image](https://live.staticflickr.com/4912/32305750398_ea37139cd6_z.jpg)
+
 ### Summary
 
 For complete details and codes, see the display-friendly pdf below
