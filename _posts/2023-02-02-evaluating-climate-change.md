@@ -28,7 +28,13 @@ For example, Sea level has an average of `-7024.94` and standard deviation of `3
 
 ### Findings
 
-Surprisingly, we didn't find much systematic trends on drought and heavy rainfall. But we did find that sea level has been increasing at `0.035906 * 4 * 39.0834 = 5.5367052` milimeters per year. Which is much higher than what is mentioned by [United States Environmental Protection Agency](https://www.epa.gov/climate-indicators/climate-change-indicators-sea-level). This would eventually come down to the solidarity and authenticity of data, and choice of data.
+Surprisingly, we didn't find much systematic trends on drought and heavy rainfall. But we did find that sea level has been increasing at `0.035906 * 4 * 39.0834 = 5.5367052` milimeters per year.
+
+> Since 1993, however, average sea level has risen at a rate of 0.12 to 0.14 (about 3.302 milimeters) inches per year
+
+Our result is much higher than what is mentioned by [United States Environmental Protection Agency](https://www.epa.gov/climate-indicators/climate-change-indicators-sea-level). This would eventually come down to the solidarity of data, the choice of data, and timeframe of analysis.
+
+I do, however, believe in my own analysis and 
 
 |                        | Concluding Description                                                     | Applied Models                                       |
 |------------------------|----------------------------------------------------------------------------|------------------------------------------------------|
