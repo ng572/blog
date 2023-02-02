@@ -34,7 +34,9 @@ Surprisingly, we didn't find much systematic trends on drought and heavy rainfal
 
 Our result is much higher than what is mentioned by [United States Environmental Protection Agency](https://www.epa.gov/climate-indicators/climate-change-indicators-sea-level). This would eventually come down to the solidarity of data, the choice of data, and timeframe of analysis.
 
-I do, however, believe in my own analysis and 
+I do, however, believe in my own analysis and this could be an indication of how variable different research's sea level analysis could be.
+
+Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
 
 |                        | Concluding Description                                                     | Applied Models                                       |
 |------------------------|----------------------------------------------------------------------------|------------------------------------------------------|
