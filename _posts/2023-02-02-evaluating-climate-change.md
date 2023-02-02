@@ -48,4 +48,6 @@ Nevertheless, this gives us confidence that the sea level changes are not far fr
 
 ### Detailed Document
 
+The complete details and codes are provided below
+
 {% include pdfembed.html filename="evaluating_climate_change.pdf" %}
