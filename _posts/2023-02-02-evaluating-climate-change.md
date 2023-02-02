@@ -40,10 +40,10 @@ I do, however, believe in my own analysis and this could be an indication of how
 
 Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
 
-|                        | Concluding Description                                                     | Applied Models                                       |
-|------------------------|----------------------------------------------------------------------------|------------------------------------------------------|
-|  Consecutive Dry Days  | has periods of high and low volatility,<br>but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
-| Maximum 5-Day Rainfall |                a random walk with a small drift<br>component               |                    ARIMA(0, 1, 1)                    |
-|        Sea Level       |                 Deterministic along time since year<br>2000                | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
+| Dimension            | Data/Indicator         | Concluding Description                                                     | Applied Models                                       |
+|----------------------|------------------------|----------------------------------------------------------------------------|------------------------------------------------------|
+| drought              |  Consecutive Dry Days  | has periods of high and low volatility,<br>but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
+| heavy rainfall       | Maximum 5-Day Rainfall |                a random walk with a small drift<br>component               |                    ARIMA(0, 1, 1)                    |
+| sea level milimeters |        Sea Level       |                 Deterministic along time since year<br>2000                | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
 
 {% include pdfembed.html filename="evaluating_climate_change.pdf" %}
