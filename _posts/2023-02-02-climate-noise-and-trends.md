@@ -18,6 +18,16 @@ But we also would not want to rely on complex models such as neural networks
 
 We want to enable a level of interpretation that is helpful to draw a conclusion on climate change, which is why our focus would be Autoregressive and Moving Average models.
 
+### Random walk with drift or Deterministic trend?
+
+A random walk has infinite variance, while a deterministic trend has finite variance. It can be incredible useful to know the nature of a series.
+
+A time series that is increasing may either be a Random walk with drift or Deterministic trend.
+
+The Dicky-Fuller test will help us find out. For more details see the pdf below.
+
+For example, discovering a weather pattern is a deterministic trend may help the government plan the future with more certainty.
+
 ### Normalization
 
 The official method of normalization is described but formula is not given
