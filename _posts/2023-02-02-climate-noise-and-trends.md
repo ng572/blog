@@ -46,6 +46,66 @@ I do, however, believe in my own analysis and this could be an indication of how
 
 Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
 
+### Cross Validation / Backtesting
+
+In order to communicate to different stakeholders, it is very important we keep things like holdout-testing and visualization in mind.
+
+It is rather difficult to conduct backtesting with the R language, but rather easy in Python, here's a little show case of what the backtesting might have looked like.
+
+It is the author's regret not having put backtesting in the original document.
+
+```Python
+from statsforecast import StatsForecast # required to instantiate StastForecast object and use cross-validation method
+
+import pandas as pd 
+
+Y_df = pd.read_csv('cross-validation-data.csv', index_col=0) # load the data 
+Y_df.head()
+
+df = Y_df[Y_df['unique_id'] == 'H1'] # select time series
+
+StatsForecast.plot(df)
+
+from statsforecast.models import AutoARIMA
+
+models = [AutoARIMA(season_length = 4)]
+
+sf = StatsForecast(
+    df = df, 
+    models = models, 
+    freq = 'Q', 
+    n_jobs = -1
+)
+
+crossvalidation_df = sf.cross_validation(
+    df = df,
+    h = 4,
+    step_size = 4,
+    n_windows = 5
+  )
+  
+crossvalidation_df.head()
+
+crossvalidation_df.rename(columns = {'y' : 'actual'}, inplace = True) # rename actual values 
+
+cutoff = crossvalidation_df['cutoff'].unique()
+
+for k in range(len(cutoff)): 
+    cv = crossvalidation_df[crossvalidation_df['cutoff'] == cutoff[k]]
+    StatsForecast.plot(df[220:], cv.loc[:, cv.columns != 'cutoff'])
+    
+from datasetsforecast.losses import rmse
+
+rmse = rmse(crossvalidation_df['actual'], crossvalidation_df['AutoARIMA'])
+
+print("RMSE using cross-validation: ", rmse)
+# > RMSE using cross-validation:  1.1713644
+```
+
+![image](https://user-images.githubusercontent.com/12572058/216494144-306a36c0-b449-4869-834e-ddf3a58eeb4f.png)
+
+Here shows [how cross-validation may look cumbersome in R](http://freerangestats.info/blog/2019/07/20/time-series-cv) and [some discussion on the computational concern](https://www.reddit.com/r/MachineLearning/comments/syx41w/p_beware_of_false_fbprophets_introducing_the/) for this problem.
+
 ### Detailed Document
 
 The complete details and codes are provided below
