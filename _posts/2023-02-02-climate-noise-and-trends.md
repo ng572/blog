@@ -46,6 +46,14 @@ I do, however, believe in my own analysis and this could be an indication of how
 
 Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
 
+### Seletected Visualization
+
+Here you can see the stationary part of the sea level (made up of trend and stationary component), it is expected to stay within a fairly stable range.
+
+![image](https://user-images.githubusercontent.com/12572058/216505235-3c65b28c-a157-4af8-8289-8dbbe7ffe102.png)
+
+In my own opinion, ARIMA-type forecasts are most useful in perceiving general direction and it is useful to look at the upper and lower bounds, but it might not be useful for accurate forecasts. SARIMA, in contrary, are more useful in predictions, if indeed the data is seasonal.
+
 ### Detailed Document
 
 The complete details and codes are provided below
