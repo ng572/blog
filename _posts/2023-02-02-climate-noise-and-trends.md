@@ -42,9 +42,9 @@ For example, Sea level has an average of `-7024.94` and standard deviation of `3
 
 | Climate Data               | Concluding Description                                                  | Applied Models                                       |
 |----------------------------|-------------------------------------------------------------------------|------------------------------------------------------|
-|  **Consecutive Dry Days**  | has periods of high and low volatility, but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
-| **Maximum 5-Day Rainfall** |                a random walk with a small drift component               |                    ARIMA(0, 1, 1)                    |
-|        **Sea Level**       |                 Deterministic along time since year 2000                | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
+|  **Consecutive Dry Days**  | Has periods of high and low volatility, but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
+| **Maximum 5-Day Rainfall** |                A random walk with a small drift component               |                    ARIMA(0, 1, 1)                    |
+|        **Sea Level**       |                   Deterministic trend since year 2000                   | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
 
 Surprisingly, we didn't find much systematic trends on drought and heavy rainfall. But we did find that sea level has been increasing at `0.035906 * 4 * 39.0834 = 5.5367052` milimeters per year.
 
