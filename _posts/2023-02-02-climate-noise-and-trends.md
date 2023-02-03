@@ -30,6 +30,12 @@ For example, Sea level has an average of `-7024.94` and standard deviation of `3
 
 ### Findings
 
+| Climate Data               | Concluding Description                                                  | Applied Models                                       |
+|----------------------------|-------------------------------------------------------------------------|------------------------------------------------------|
+|  **Consecutive Dry Days**  | has periods of high and low volatility, but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
+| **Maximum 5-Day Rainfall** |                a random walk with a small drift component               |                    ARIMA(0, 1, 1)                    |
+|        **Sea Level**       |                 Deterministic along time since year 2000                | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
+
 Surprisingly, we didn't find much systematic trends on drought and heavy rainfall. But we did find that sea level has been increasing at `0.035906 * 4 * 39.0834 = 5.5367052` milimeters per year.
 
 > Since 1993, however, average sea level has risen at a rate of 0.12 to 0.14 (about 3.302 milimeters) inches per year
@@ -39,12 +45,6 @@ Our result is much higher than what is mentioned by [United States Environmental
 I do, however, believe in my own analysis and this could be an indication of how variable different research's sea level analysis could be.
 
 Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
-
-| Climate Data               | Concluding Description                                                  | Applied Models                                       |
-|----------------------------|-------------------------------------------------------------------------|------------------------------------------------------|
-|  **Consecutive Dry Days**  | has periods of high and low volatility, but in general it is stationary |         Series: MA(10)<br>Residuals: ARCH(5)         |
-| **Maximum 5-Day Rainfall** |                a random walk with a small drift component               |                    ARIMA(0, 1, 1)                    |
-|        **Sea Level**       |                 Deterministic along time since year 2000                | Series: Deterministic Trend<br>Residuals: ARMA(1, 7) |
 
 ### Detailed Document
 
