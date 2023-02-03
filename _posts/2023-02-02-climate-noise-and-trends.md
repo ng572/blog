@@ -20,7 +20,7 @@ We want to enable a level of interpretation that is helpful to draw a conclusion
 
 ### Random walk with drift or Deterministic trend?
 
-A random walk has infinite variance, while a deterministic trend has finite variance. It can be incredible useful to know the nature of a series.
+A random walk has infinite variance, while a deterministic trend has finite variance. It can be incredibly useful to know the nature of a series.
 
 A time series that is increasing may either be a `Random walk with drift` or `Deterministic trend`.
 
