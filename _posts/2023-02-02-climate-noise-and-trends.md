@@ -48,7 +48,7 @@ Nevertheless, this gives us confidence that the sea level changes are not far fr
 
 ### Seletected Visualization
 
-Here you can see the stationary part of the sea level (made up of trend and stationary component), it is expected to stay within a fairly stable range.
+Here you can see the stationary part of the sea level (made up of trend and stationary component), it is expected to stay within a fairly stable range as forecasted below.
 
 ![image](https://user-images.githubusercontent.com/12572058/216505235-3c65b28c-a157-4af8-8289-8dbbe7ffe102.png)
 
