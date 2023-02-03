@@ -22,9 +22,9 @@ We want to enable a level of interpretation that is helpful to draw a conclusion
 
 A random walk has infinite variance, while a deterministic trend has finite variance. It can be incredible useful to know the nature of a series.
 
-A time series that is increasing may either be a Random walk with drift or Deterministic trend.
+A time series that is increasing may either be a `Random walk with drift` or `Deterministic trend`.
 
-The Dicky-Fuller test will help us find out. For more details see the pdf below.
+The `Dicky-Fuller test` will help us find out. For more details see the pdf below.
 
 For example, discovering a weather pattern is a deterministic trend may help the government plan the future with more certainty.
 
@@ -56,7 +56,7 @@ I do, however, believe in my own analysis and this could be an indication of how
 
 Nevertheless, this gives us confidence that the sea level changes are not far from the 4 milimeters range in a meta-review sense.
 
-### Seletected Visualization
+### Seletected Visualizations
 
 Here you can see the rainfall data, forecasted in a way that has expanding variance along time. This is the characteristics of a random walk.
 
